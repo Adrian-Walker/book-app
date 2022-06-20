@@ -3,9 +3,12 @@ import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>React Native Project</Text>
-      <StatusBar style="auto" />
+    <View style={{ flex: 1 }}>
+      <SafeAreaView />
+      <View style={{ height: 70, borderBottomWidth: 0.5 }} />
+      <View style={{ flex: 1 }} />
+      <View style={{ height: 70, borderBottomWidth: 0.5 }} />
+      <SafeAreaView />
     </View>
   );
 }
