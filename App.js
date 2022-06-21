@@ -8,16 +8,21 @@ export default function App() {
       <View
         style={{
           height: 70,
-          borderBottomWidth: 0.5,
+          borderBottomWidth: 3.5,
           borderBottomColor: "#484",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
-        <Text>My New Books</Text>
+        <Text style={{ fontSize: 24 }}>My New Books</Text>
       </View>
       <View style={{ flex: 1 }} />
       <View
-        style={{ height: 70, borderTopWidth: 0.5, borderTopColor: "#484" }}
+        style={{ height: 70, borderTopWidth: 3.5, borderTopColor: "#484" }}
       />
+      <View>
+        <Text> Total: </Text>
+      </View>
       <SafeAreaView />
     </View>
   );
