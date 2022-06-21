@@ -18,10 +18,45 @@ export default function App() {
       </View>
       <View style={{ flex: 1 }} />
       <View
-        style={{ height: 70, borderTopWidth: 3.5, borderTopColor: "#484" }}
-      />
-      <View>
-        <Text> Total: </Text>
+        style={{
+          height: 70,
+          borderTopWidth: 3.5,
+          borderTopColor: "#484",
+          flexDirection: "row",
+        }}
+      >
+        <View
+          style={{
+            flex: "1",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Text style={{ fontSize: "25" }}> Total: </Text>
+          <Text>0</Text>
+        </View>
+
+        <View
+          style={{
+            flex: "1",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Text style={{ fontSize: "25" }}> Reading: </Text>
+          <Text>0</Text>
+        </View>
+
+        <View
+          style={{
+            flex: "1",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Text style={{ fontSize: "25" }}> Read: </Text>
+          <Text>0</Text>
+        </View>
       </View>
       <SafeAreaView />
     </View>
