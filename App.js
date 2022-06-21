@@ -1,7 +1,13 @@
 import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import BookCount from "./components/BookCount";
 
 export default function App() {
+  const [totalCount, setTotalCount] = useState(0);
+  const [readingCount, setReadingCount] = useState(0);
+  const [readCount, setReadCount] = useState(0);
+
   return (
     <View style={{ flex: 1 }}>
       <SafeAreaView />
@@ -25,38 +31,9 @@ export default function App() {
           flexDirection: "row",
         }}
       >
-        <View
-          style={{
-            flex: "1",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Text style={{ fontSize: "25" }}> Total: </Text>
-          <Text>0</Text>
-        </View>
-
-        <View
-          style={{
-            flex: "1",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Text style={{ fontSize: "25" }}> Reading: </Text>
-          <Text>0</Text>
-        </View>
-
-        <View
-          style={{
-            flex: "1",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Text style={{ fontSize: "25" }}> Read: </Text>
-          <Text>0</Text>
-        </View>
+        <BookCount title="Total:" count={totalCount} />
+        <BookCount title="Reading:" count={readingCount} />
+        <BookCount title="Read:" count={readCount} />
       </View>
       <SafeAreaView />
     </View>
