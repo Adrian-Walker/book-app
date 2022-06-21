@@ -6,6 +6,7 @@ import {
   View,
   SafeAreaView,
   TouchableOpacity,
+  TextInput,
 } from "react-native";
 import BookCount from "./components/BookCount";
 
@@ -30,7 +31,9 @@ export default function App() {
       </View>
 
       <View style={{ flex: 1 }}>
-        <View></View>
+        <View style={{ height: 50 }}>
+          <TextInput style={{ flex: 1, backgroundColor: "grey" }} />
+        </View>
 
         <TouchableOpacity
           style={{ position: "absolute", bottom: 20, right: 20 }}
