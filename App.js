@@ -1,6 +1,12 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  TouchableOpacity,
+} from "react-native";
 import BookCount from "./components/BookCount";
 
 export default function App() {
@@ -22,7 +28,27 @@ export default function App() {
       >
         <Text style={{ fontSize: 24 }}>My New Books</Text>
       </View>
-      <View style={{ flex: 1 }} />
+
+      <View style={{ flex: 1 }}>
+        <View></View>
+
+        <TouchableOpacity
+          style={{ position: "absolute", bottom: 20, right: 20 }}
+        >
+          <View
+            style={{
+              width: 50,
+              height: 50,
+              borderRadius: 25,
+              backgroundColor: "#484",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ color: "white", fontSize: 40 }}>+</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
       <View
         style={{
           height: 70,
