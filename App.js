@@ -9,11 +9,21 @@ import {
   TextInput,
 } from "react-native";
 import BookCount from "./components/BookCount";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function App() {
   const [totalCount, setTotalCount] = useState(0);
   const [readingCount, setReadingCount] = useState(0);
   const [readCount, setReadCount] = useState(0);
+  const [visible, setVisible] = useState(false);
+
+  showAddNewBook = () => {
+    setVisible(true);
+  };
+
+  hideAddNewBook = () => {
+    setVisible(false);
+  };
 
   return (
     <View style={{ flex: 1 }}>
@@ -31,11 +41,45 @@ export default function App() {
       </View>
 
       <View style={{ flex: 1 }}>
-        <View style={{ height: 50 }}>
-          <TextInput style={{ flex: 1, backgroundColor: "grey" }} />
-        </View>
+        {visible && (
+          <View style={{ height: 50, flexDirection: "row" }}>
+            <TextInput
+              style={{ flex: 1, backgroundColor: "#ececec", paddingLeft: 5 }}
+              placeholder="Enter Book Name"
+              placeholderTextColor="black"
+            />
+
+            <TouchableOpacity>
+              <View
+                style={{
+                  width: 50,
+                  height: 50,
+                  backgroundColor: "#484",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Ionicons name="ios-checkmark" color="white" size={40} />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={hideAddNewBook}>
+              <View
+                style={{
+                  width: 50,
+                  height: 50,
+                  backgroundColor: "red",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Ionicons name="ios-close" color="white" size={40} />
+              </View>
+            </TouchableOpacity>
+          </View>
+        )}
 
         <TouchableOpacity
+          onPress={showAddNewBook}
           style={{ position: "absolute", bottom: 20, right: 20 }}
         >
           <View
